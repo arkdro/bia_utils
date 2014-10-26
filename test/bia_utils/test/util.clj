@@ -17,3 +17,7 @@
   (is (= {"wer" 1 "asd" 3} (add-one-k-mer 1 "qwer" 3 {"asd" 3})))
   )
 
+(deftest get-one-k-mer-test
+  (is (= "qwe" (get-one-k-mer 0 "qwer" 3)))
+  (is (= "wer" (get-one-k-mer 1 "qwer" 3)))
+  )
