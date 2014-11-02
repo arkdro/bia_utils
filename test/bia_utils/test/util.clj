@@ -17,6 +17,12 @@
   (is (= {"wer" 1 "asd" 3} (add-one-k-mer 1 "qwer" 3 {"asd" 3})))
   )
 
+(deftest add-provided-k-mer-test
+  (is (= {"qwe" 1} (add-provided-k-mer "qwe" {})))
+  (is (= {"qwe" 2 "asd" 3} (add-provided-k-mer "qwe" {"qwe" 1 "asd" 3})))
+  (is (= {"wer" 1 "asd" 3} (add-provided-k-mer "wer" {"asd" 3})))
+  )
+
 (deftest get-one-k-mer-test
   (is (= "qwe" (get-one-k-mer 0 "qwer" 3)))
   (is (= "wer" (get-one-k-mer 1 "qwer" 3)))
