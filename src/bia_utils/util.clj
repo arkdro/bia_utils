@@ -18,3 +18,6 @@
         new-acc (update-in acc [k-mer] (fnil inc 0))]
     new-acc))
 
+(defn add-provided-k-mer [k-mer acc]
+  (update-in acc [k-mer] (fnil inc 0)))
+
