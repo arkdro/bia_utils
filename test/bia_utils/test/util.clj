@@ -33,3 +33,9 @@
   (is (= 3 (find-max-value [["qwe" 3] ["asd" 3]])))
   )
 
+(deftest find-max-items-test
+  (is (= [["asd" 3]] (find-max-items [["qwe" 1] ["asd" 3]])))
+  (is (= [["asd" 3] ["qwe" 3]]
+         (sort (find-max-items [["qwe" 3] ["asd" 3]]))))
+  )
+
