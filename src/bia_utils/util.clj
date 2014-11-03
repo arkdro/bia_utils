@@ -21,3 +21,15 @@
 (defn add-provided-k-mer [k-mer acc]
   (update-in acc [k-mer] (fnil inc 0)))
 
+(defn find-max-value-aux [acc [h & t]]
+  (cond
+   (nil? h) acc
+   (> (second h) acc) (recur (second h) t)
+   :default (recur acc t)))
+
+(defn find-max-value
+  "Given a sequence of items of size 2 (i.e. key-value),
+   find the max of the values"
+  [[h & t :as data]]
+  (find-max-value-aux (second h) data))
+
