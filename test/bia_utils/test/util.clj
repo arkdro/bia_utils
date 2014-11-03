@@ -27,3 +27,9 @@
   (is (= "qwe" (get-one-k-mer 0 "qwer" 3)))
   (is (= "wer" (get-one-k-mer 1 "qwer" 3)))
   )
+
+(deftest find-max-value-test
+  (is (= 3 (find-max-value [["qwe" 1] ["asd" 3]])))
+  (is (= 3 (find-max-value [["qwe" 3] ["asd" 3]])))
+  )
+
