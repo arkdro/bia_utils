@@ -33,3 +33,11 @@
   [[h & t :as data]]
   (find-max-value-aux (second h) data))
 
+(defn find-max-items
+  "Given a sequence of items of size 2 (i.e. key-value),
+   find the items which contain the max values"
+  [data]
+  (let [max-val (find-max-value data)
+        items (filter #(= (second %) max-val) data)]
+    items))
+
